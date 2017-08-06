@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 import Button from 'src/components/Button';
 
 import * as actions from 'src/redux/actions/counter';
-console.log(actions);
 
 import s from './style.css';
 
@@ -21,7 +20,6 @@ class Counter extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className={s.container}>
         <Button onClick={this.subtract}>-</Button>
@@ -30,17 +28,16 @@ class Counter extends Component {
       </div>
     );
   }
-
 }
 
 const pickState = ({ counter }) => ({
   state: { counter },
 });
 
-const mapDispatch = (dispatch) => ({
+const mapDispatch = dispatch => ({
   actions: bindActionCreators(actions, dispatch),
-}) 
+});
 
-const ConnectedCounter = connect(pickState, mapDispatch)(Counter)
+const ConnectedCounter = connect(pickState, mapDispatch)(Counter);
 
 export default ConnectedCounter;
