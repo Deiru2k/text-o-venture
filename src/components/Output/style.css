@@ -1,0 +1,9 @@
+
+.window {
+  display: block;
+  padding: 15px;
+  margin: 15px;
+  width: 800px;
+  height: 600px;
+  border: 1px solid black;
+}
